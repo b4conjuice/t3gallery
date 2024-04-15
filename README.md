@@ -1,29 +1,77 @@
-# Create T3 App
+# t3 gallery
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+## todo
 
-## What's next? How do I make an app with this?
+- [ ] make it deploy (vercel)
+- [ ] scaffold basic ui with mock data
+- [ ] actually set up db (vercel postgres)
+- [ ] attach db to ui
+- [ ] add auth (clerk)
+- [ ] add image upload
+- [ ] error management (sentry)
+- [ ] routing/image page (parallel router)
+- [ ] delete button (server actions)
+- [ ] analytics (posthog)
+- [ ] ratelimiting (upstash)
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+## t3 stack 2024
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+- next
+- react
+- typescript
+- tailwind
+- shadcn/ui
+- drizzle orm
+- pnpm
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Drizzle](https://orm.drizzle.team)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+- sponsers: hosting
+- vercel
+- clerk
+- posthog - analytics
+- upstash
+- sentry
+- db? - vercel pg db
 
-## Learn More
+```bash
+pnpm create t3-app@latest
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+   ___ ___ ___   __ _____ ___   _____ ____    __   ___ ___
+  / __| _ \ __| /  \_   _| __| |_   _|__ /   /  \ | _ \ _ \
+ | (__|   / _| / /\ \| | | _|    | |  |_ \  / /\ \|  _/  _/
+  \___|_|_\___|_/‾‾\_\_| |___|   |_| |___/ /_/‾‾\_\_| |_|
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
-
-## How do I deploy this?
-
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+│
+◇  What will your project be called?
+│  t3gallery
+│
+◇  Will you be using TypeScript or JavaScript?
+│  TypeScript
+│
+◇  Will you be using Tailwind CSS for styling?
+│  Yes
+│
+◇  Would you like to use tRPC?
+│  No
+│
+◇  What authentication provider would you like to use?
+│  None
+│
+◇  What database ORM would you like to use?
+│  Drizzle
+│
+◇   EXPERIMENTAL  Would you like to use Next.js App Router?
+│  Yes
+│
+◇  What database provider would you like to use?
+│  PostgreSQL
+│
+◇  Should we initialize a Git repository and stage the changes?
+│  No
+│
+◇  Should we run 'pnpm install' for you?
+│  Yes
+│
+◇  What import alias would you like to use?
+│  @/
+```
