@@ -9,7 +9,7 @@ export default function TopNav() {
 
       <div className='text-xl font-semibold'>
         <SignedOut>
-          <SignInButton />
+          <SignInButton>sign in</SignInButton>
         </SignedOut>
         <SignedIn>
           <UserButton />
