@@ -1,6 +1,11 @@
+'use client'
+
+import { UploadButton } from '@/utils/uploadthing'
 import { SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
+import { useRouter } from 'next/navigation'
 
 export default function TopNav() {
+  const router = useRouter()
   return (
     <nav className='flex w-full items-center justify-between border-b border-cb-dusty-blue p-4'>
       <div className='text-3xl font-extrabold leading-9 tracking-tight sm:text-4xl sm:leading-10'>
@@ -12,6 +17,12 @@ export default function TopNav() {
           <SignInButton>sign in</SignInButton>
         </SignedOut>
         <SignedIn>
+          <UploadButton
+            endpoint='imageUploader'
+            onClientUploadComplete={() => {
+              router.refresh()
+            }}
+          />
           <UserButton />
         </SignedIn>
       </div>
