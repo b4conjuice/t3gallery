@@ -1,19 +1,15 @@
 import { getImage } from '@/server/queries'
-import Image from 'next/image'
 
 export default async function FullImagePage(props: { id: number }) {
-  const idAsNumber = Number(props.id)
-
-  if (Number.isNaN(idAsNumber)) throw new Error('invalid id')
-
-  const image = await getImage(idAsNumber)
+  const image = await getImage(props.id)
   return (
-    <Image
-      src={image.url}
-      style={{ objectFit: 'contain' }}
-      width={192}
-      height={192}
-      alt={image.name}
-    />
+    <div className='flex h-full w-full divide-x divide-cb-dusty-blue'>
+      <div className='flex flex-shrink items-center justify-center px-4'>
+        <img src={image.url} alt={image.name} className='w-96 object-contain' />
+      </div>
+      <div className='flex w-48 flex-shrink-0 flex-col px-4'>
+        <div className='text-xl font-bold'>{image.name}</div>
+      </div>
+    </div>
   )
 }
