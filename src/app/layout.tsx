@@ -40,7 +40,7 @@ export default function RootLayout({
           />
           <div className='grid h-screen grid-rows-[auto,1fr] bg-cb-dark-blue text-cb-white'>
             <TopNav />
-            <main className='overflow-y-scroll'>{children}</main>
+            <main className='overflow-y-auto'>{children}</main>
             {modal}
           </div>
           <div id='modal-root' />
