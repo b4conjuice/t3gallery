@@ -13,8 +13,10 @@
 - [x] use next/image component
 - [x] error management (sentry)
 - [x] routing/image page (parallel router)
-- [ ] delete button (server actions)
+- [x] update upload button to be less cringe
+- [x] add shadcn/ui toast component
 - [ ] analytics (posthog)
+- [ ] delete button (server actions)
 - [ ] ratelimiting (upstash)
 
 ## t3 stack 2024

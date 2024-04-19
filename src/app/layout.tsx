@@ -7,6 +7,7 @@ import TopNav from './_components/topnav'
 import { ourFileRouter } from './api/uploadthing/core'
 
 import '@/styles/globals.css'
+import { CSPostHogProvider } from './_analytics/providers'
 
 export const metadata = {
   manifest: '/manifest.json',
@@ -28,28 +29,30 @@ export default function RootLayout({
 }) {
   return (
     <ClerkProvider>
-      <html lang='en'>
-        <body>
-          <NextSSRPlugin
-            /**
-             * The `extractRouterConfig` will extract **only** the route configs
-             * from the router to prevent additional information from being
-             * leaked to the client. The data passed to the client is the same
-             * as if you were to fetch `/api/uploadthing` directly.
-             */
-            routerConfig={extractRouterConfig(ourFileRouter)}
-          />
-          <div className='grid h-screen grid-rows-[auto,1fr] bg-cb-dark-blue text-cb-white'>
-            <TopNav />
-            <main className='overflow-y-auto'>{children}</main>
-            {modal}
-          </div>
-          <div id='modal-root' />
-          <Toaster
-            toastOptions={{ className: 'bg-cb-dusty-blue text-cb-white' }}
-          />
-        </body>
-      </html>
+      <CSPostHogProvider>
+        <html lang='en'>
+          <body>
+            <NextSSRPlugin
+              /**
+               * The `extractRouterConfig` will extract **only** the route configs
+               * from the router to prevent additional information from being
+               * leaked to the client. The data passed to the client is the same
+               * as if you were to fetch `/api/uploadthing` directly.
+               */
+              routerConfig={extractRouterConfig(ourFileRouter)}
+            />
+            <div className='grid h-screen grid-rows-[auto,1fr] bg-cb-dark-blue text-cb-white'>
+              <TopNav />
+              <main className='overflow-y-auto'>{children}</main>
+              {modal}
+            </div>
+            <div id='modal-root' />
+            <Toaster
+              toastOptions={{ className: 'bg-cb-dusty-blue text-cb-white' }}
+            />
+          </body>
+        </html>
+      </CSPostHogProvider>
     </ClerkProvider>
   )
 }
