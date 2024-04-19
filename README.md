@@ -15,7 +15,7 @@
 - [x] routing/image page (parallel router)
 - [x] update upload button to be less cringe
 - [x] add shadcn/ui toast component
-- [ ] analytics (posthog)
+- [x] analytics (posthog)
 - [ ] delete button (server actions)
 - [ ] ratelimiting (upstash)
 
