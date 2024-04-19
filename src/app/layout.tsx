@@ -2,6 +2,7 @@ import { ClerkProvider } from '@clerk/nextjs'
 import { NextSSRPlugin } from '@uploadthing/react/next-ssr-plugin'
 import { extractRouterConfig } from 'uploadthing/server'
 
+import { Toaster } from '@/components/ui/sonner'
 import TopNav from './_components/topnav'
 import { ourFileRouter } from './api/uploadthing/core'
 
@@ -44,6 +45,9 @@ export default function RootLayout({
             {modal}
           </div>
           <div id='modal-root' />
+          <Toaster
+            toastOptions={{ className: 'bg-cb-dusty-blue text-cb-white' }}
+          />
         </body>
       </html>
     </ClerkProvider>
