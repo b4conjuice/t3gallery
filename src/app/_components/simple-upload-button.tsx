@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation'
 import { toast } from 'sonner'
 
 import { useUploadThing } from '@/utils/uploadthing'
+import { usePostHog } from 'posthog-js/react'
 
 // inferred input off useUploadThing
 type Input = Parameters<typeof useUploadThing>
@@ -77,11 +78,13 @@ function LoadingIcon({ className }: { className: string }) {
 
 export function SimpleUploadButton() {
   const router = useRouter()
+  const posthosg = usePostHog()
   const { inputProps } = useUploadThingInputProps('imageUploader', {
     onUploadBegin() {
+      posthosg.capture('on-upload-begin')
       toast(
         <div className='flex w-full items-center space-x-4'>
-          <LoadingIcon className='animate-spin-slow h-8 w-8' />
+          <LoadingIcon className='h-8 w-8 animate-spin-slow' />
           <span>uploading</span>
         </div>,
         {
