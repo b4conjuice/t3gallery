@@ -19,6 +19,13 @@
 - [x] delete button (server actions)
 - [x] ratelimiting (upstash)
 
+## challenges
+
+- fix page layout for images of different resolutions
+- selecting images
+- infinite scroll
+- folders/albums
+
 ## t3 stack 2024
 
 - next
@@ -29,13 +36,12 @@
 - drizzle orm
 - pnpm
 
-- sponsers: hosting
+- sponsers:
 - vercel
-- clerk
-- posthog - analytics
+- posthog
 - upstash
+- clerk
 - sentry
-- db? - vercel pg db
 
 ```bash
 pnpm create t3-app@latest
