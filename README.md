@@ -17,7 +17,7 @@
 - [x] add shadcn/ui toast component
 - [x] analytics (posthog)
 - [x] delete button (server actions)
-- [ ] ratelimiting (upstash)
+- [x] ratelimiting (upstash)
 
 ## t3 stack 2024
 
