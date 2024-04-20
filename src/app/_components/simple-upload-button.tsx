@@ -78,10 +78,10 @@ function LoadingIcon({ className }: { className: string }) {
 
 export function SimpleUploadButton() {
   const router = useRouter()
-  const posthosg = usePostHog()
+  const posthog = usePostHog()
   const { inputProps } = useUploadThingInputProps('imageUploader', {
     onUploadBegin() {
-      posthosg.capture('on-upload-begin')
+      posthog.capture('on-upload-begin')
       toast(
         <div className='flex w-full items-center space-x-4'>
           <LoadingIcon className='h-8 w-8 animate-spin-slow' />
@@ -92,6 +92,11 @@ export function SimpleUploadButton() {
           id: 'on-upload-begin',
         }
       )
+    },
+    onUploadError(error) {
+      posthog.capture('on-upload-error', { error })
+      toast.dismiss('on-upload-begin')
+      toast.error('upload failed')
     },
     onClientUploadComplete: () => {
       toast.dismiss('on-upload-begin')
