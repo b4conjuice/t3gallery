@@ -16,7 +16,7 @@
 - [x] update upload button to be less cringe
 - [x] add shadcn/ui toast component
 - [x] analytics (posthog)
-- [ ] delete button (server actions)
+- [x] delete button (server actions)
 - [ ] ratelimiting (upstash)
 
 ## t3 stack 2024
